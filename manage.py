@@ -12,14 +12,6 @@ def main():
     settings_module = 'quickstartproject.production' if 'WEBSITE_HOSTNAME' in os.environ else 'quickstartproject.settings'
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
-    
-    #if 'WEBSITE_HOSTNAME' in os.environ:
-    #    print("Running in Azure - Using production settings");
-    #    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'quickstartproject.production')
-    #else:
-    #    print("Running locally - Using local settings");
-    #    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'quickstartproject.settings')
-
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

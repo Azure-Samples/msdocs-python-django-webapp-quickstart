@@ -8,7 +8,7 @@ If you need an Azure account, you can [create one for free](https://azure.micros
 
 ## For local development
 
-Fill in the a secret value in the `.env` file.
+Fill in a secret value in the `.env` file.
 
 For local development, use this random string as an appropriate value:
 

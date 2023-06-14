@@ -21,4 +21,4 @@ MIDDLEWARE = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-Debug = False
+DEBUG = False

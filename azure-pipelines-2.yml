@@ -1,3 +1,8 @@
+# Python Django
+# Test a Django project on multiple versions of Python.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
 trigger:
 - main
 
@@ -40,7 +45,8 @@ steps:
 
 - script: |
     pushd '$(projectRoot)'
-    pytest tests_.py -o junit_family=xunit2 -o junit_directory=pytest_results
+    ls -al  # Print contents of the working directory for debugging
+    pytest hello_azure/tests_.py -o junit_family=xunit2 -o junit_directory=pytest_results
   displayName: 'Run pytest'
 
 - task: PublishTestResults@2

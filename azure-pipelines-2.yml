@@ -53,3 +53,7 @@ steps:
     testResultsFiles: "**/test_*.xml"
     testRunTitle: 'Pytest'
   condition: succeededOrFailed()
+- script: |
+    pushd '$(projectRoot)'
+    pytest -o junit_family=xunit2 -o junit_directory=pytest_results
+  displayName: 'Run pytest'

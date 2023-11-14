@@ -44,11 +44,12 @@ steps:
 
 - script: |
     pushd '$(projectRoot)'
-    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
-  displayName: 'Run tests'
+    pytest
+  displayName: 'Run pytest'
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: "**/TEST-*.xml"
-    testRunTitle: 'Python $(PYTHON_VERSION)'
+    testResultsFiles: "**/test_*.xml"
+    testRunTitle: 'Pytest'
   condition: succeededOrFailed()
+

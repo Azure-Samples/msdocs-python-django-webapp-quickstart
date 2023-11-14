@@ -1,6 +1,6 @@
 # tests/test_example.py
 from django.test import TestCase
-from yourapp.models import YourModel
+from hello_azure.models import YourModel
 
 class YourModelTests(TestCase):
     def test_something(self):

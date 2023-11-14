@@ -39,16 +39,19 @@ steps:
 - script: |
     python -m pip install --upgrade pip setuptools wheel
     pip install -r requirements.txt
+    pip install pytest
     pip install unittest-xml-reporting
   displayName: 'Install prerequisites'
 
 - script: |
     pushd '$(projectRoot)'
-    python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
-  displayName: 'Run tests'
+    ls -al  # Print contents of the working directory for debugging
+    ls -al hello_azure/  # Print contents of the hello_azure directory
+    pytest hello_azure/test_.py -o junit_family=xunit2 -o junit_directory=pytest_results
+  displayName: 'Run pytest'
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: "**/TEST-*.xml"
-    testRunTitle: 'Python $(PYTHON_VERSION)'
+    testResultsFiles: "**/test_*.xml"
+    testRunTitle: 'Pytest'
   condition: succeededOrFailed()

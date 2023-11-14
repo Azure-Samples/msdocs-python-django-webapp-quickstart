@@ -46,11 +46,12 @@ steps:
 - script: |
     pushd '$(projectRoot)'
     ls -al  # Print contents of the working directory for debugging
+    ls -al hello_azure/  # Print contents of the hello_azure directory
     pytest hello_azure/test_.py -o junit_family=xunit2 -o junit_directory=pytest_results
   displayName: 'Run pytest'
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: "**/pytest_results/*.xml"
+    testResultsFiles: "**/test_*.xml"
     testRunTitle: 'Pytest'
   condition: succeededOrFailed()

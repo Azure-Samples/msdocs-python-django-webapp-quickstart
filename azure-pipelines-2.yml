@@ -39,6 +39,7 @@ steps:
 - script: |
     python -m pip install --upgrade pip setuptools wheel
     pip install -r requirements.txt
+    pip install pytest
     pip install unittest-xml-reporting
   displayName: 'Install prerequisites'
 
@@ -52,4 +53,3 @@ steps:
     testResultsFiles: "**/test_*.xml"
     testRunTitle: 'Pytest'
   condition: succeededOrFailed()
-

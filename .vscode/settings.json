@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/b17651eb-2be2-47f6-ba8d-e84ef8cad8ac/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/msdocs-python-webapp-quickstart-jlr",
+  "appService.deploySubpath": "."
+}
